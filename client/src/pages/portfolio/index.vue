@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
+  <div class="container-fluid">
+    <!-- <h1>{{ msg }}</h1> -->
+    <b-row>
+      <b-col cols="6">
+        <h1>{{ msg }}</h1>
+      </b-col>
+      <b-col cols="6">
+        <b-button :to="{ name: 'new-portfolio'}" variant="primary">New</b-button>
+      </b-col>
+    </b-row>
     <b-table striped hover :fields="fields" :items="items">
       <template slot="id" slot-scope="row">
         <router-link :to="{ name: 'portfolio', params: { id: row.value }}">{{row.value}}</router-link>
